@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const baseTheme = {
@@ -196,6 +196,7 @@ export default function Layout({ lang = "zh", children, ctaLabel, ctaTo }) {
   const config = navConfig[lang];
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const variantKey = (() => {
     const path = location.pathname.replace(/^\/en/, "");
@@ -210,13 +211,36 @@ export default function Layout({ lang = "zh", children, ctaLabel, ctaTo }) {
     "--hero-bg": theme.heroBg
   };
 
+  const langSwitchTo = (() => {
+    const { pathname, search, hash } = location;
+    if (lang === "zh") {
+      const target = pathname === "/" ? "/en" : `/en${pathname}`;
+      return `${target}${search}${hash}`;
+    }
+    const stripped = pathname.replace(/^\/en/, "") || "/";
+    const target = stripped === "/" ? "/" : stripped;
+    return `${target}${search}${hash}`;
+  })();
+
+  const handleLangSwitch = (event) => {
+    event.preventDefault();
+    navigate(langSwitchTo, {
+      state: { preserveScroll: true, scrollY: window.scrollY }
+    });
+  };
+
   useEffect(() => {
     setOpen(false);
   }, [location.pathname]);
 
   useEffect(() => {
+    if (location.state?.preserveScroll) {
+      const targetY = Number.isFinite(location.state.scrollY) ? location.state.scrollY : 0;
+      window.scrollTo({ top: targetY, left: 0, behavior: "auto" });
+      return;
+    }
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-  }, [location.pathname]);
+  }, [location.pathname, location.search, location.hash, location.state]);
 
   useEffect(() => {
     const targets = document.querySelectorAll(".reveal");
@@ -270,7 +294,7 @@ export default function Layout({ lang = "zh", children, ctaLabel, ctaTo }) {
             ))}
           </nav>
           <div className="nav-cta">
-            <Link className="btn ghost" to={config.langSwitch.to}>
+            <Link className="btn ghost" to={langSwitchTo} onClick={handleLangSwitch}>
               {config.langSwitch.label}
             </Link>
             <Link className="btn primary" to={ctaTo ?? config.cta.to}>
@@ -309,7 +333,7 @@ export default function Layout({ lang = "zh", children, ctaLabel, ctaTo }) {
               )}
             </div>
           ))}
-          <Link className="text-sm text-on-muted" to={config.langSwitch.to}>
+          <Link className="text-sm text-on-muted" to={langSwitchTo} onClick={handleLangSwitch}>
             {config.langSwitch.label}
           </Link>
         </div>
@@ -362,7 +386,9 @@ export default function Layout({ lang = "zh", children, ctaLabel, ctaTo }) {
             ))}
           </div>
           <div className="footer-lang">
-            <Link to={config.langSwitch.to}>{config.langSwitch.label}</Link>
+            <Link to={langSwitchTo} onClick={handleLangSwitch}>
+              {config.langSwitch.label}
+            </Link>
           </div>
         </div>
       </footer>
