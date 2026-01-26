@@ -20,6 +20,11 @@ import HailingMaritimeZh from "./pages/zh/HailingMaritime.jsx";
 import CompanyNongmaiZh from "./pages/zh/CompanyNongmai.jsx";
 import CompanyYongxingZh from "./pages/zh/CompanyYongxing.jsx";
 import CompanyPartnersZh from "./pages/zh/CompanyPartners.jsx";
+import CompanyZhiqianZh from "./pages/zh/CompanyZhiqian.jsx";
+import AiBreedingZh from "./pages/zh/AiBreeding.jsx";
+import AiBreedingOysterZh from "./pages/zh/AiBreedingOyster.jsx";
+import AiBreedingEelZh from "./pages/zh/AiBreedingEel.jsx";
+import AiBreedingPomfretZh from "./pages/zh/AiBreedingPomfret.jsx";
 import NewsZh from "./pages/zh/News.jsx";
 import ContactZh from "./pages/zh/Contact.jsx";
 
@@ -43,6 +48,11 @@ import HailingMaritimeEn from "./pages/en/HailingMaritime.jsx";
 import CompanyNongmaiEn from "./pages/en/CompanyNongmai.jsx";
 import CompanyYongxingEn from "./pages/en/CompanyYongxing.jsx";
 import CompanyPartnersEn from "./pages/en/CompanyPartners.jsx";
+import CompanyZhiqianEn from "./pages/en/CompanyZhiqian.jsx";
+import AiBreedingEn from "./pages/en/AiBreeding.jsx";
+import AiBreedingOysterEn from "./pages/en/AiBreedingOyster.jsx";
+import AiBreedingEelEn from "./pages/en/AiBreedingEel.jsx";
+import AiBreedingPomfretEn from "./pages/en/AiBreedingPomfret.jsx";
 import NewsEn from "./pages/en/News.jsx";
 import ContactEn from "./pages/en/Contact.jsx";
 
@@ -70,6 +80,10 @@ export default function App() {
         <Route path="/masterplan/events" element={<EventsZh />} />
         <Route path="/masterplan/aquaculture-museum" element={<AquacultureMuseumZh />} />
         <Route path="/masterplan/entrepreneurship" element={<EntrepreneurshipZh />} />
+        <Route path="/ai-breeding" element={<AiBreedingZh />} />
+        <Route path="/ai-breeding/oyster" element={<AiBreedingOysterZh />} />
+        <Route path="/ai-breeding/eel" element={<AiBreedingEelZh />} />
+        <Route path="/ai-breeding/pomfret" element={<AiBreedingPomfretZh />} />
         <Route path="/hailing" element={<HailingZh />} />
         <Route path="/hailing/pingang" element={<HailingPingangZh />} />
         <Route path="/hailing/island" element={<HailingIslandZh />} />
@@ -80,6 +94,7 @@ export default function App() {
         <Route path="/hailing/maritime" element={<HailingMaritimeZh />} />
         <Route path="/company/nongmai-ai" element={<CompanyNongmaiZh />} />
         <Route path="/company/yongxing" element={<CompanyYongxingZh />} />
+        <Route path="/company/zhiqian" element={<CompanyZhiqianZh />} />
         <Route path="/company/partners" element={<CompanyPartnersZh />} />
         <Route path="/news" element={<NewsZh />} />
         <Route path="/contact" element={<ContactZh />} />
@@ -93,6 +108,10 @@ export default function App() {
         <Route path="/en/masterplan/events" element={<EventsEn />} />
         <Route path="/en/masterplan/aquaculture-museum" element={<AquacultureMuseumEn />} />
         <Route path="/en/masterplan/entrepreneurship" element={<EntrepreneurshipEn />} />
+        <Route path="/en/ai-breeding" element={<AiBreedingEn />} />
+        <Route path="/en/ai-breeding/oyster" element={<AiBreedingOysterEn />} />
+        <Route path="/en/ai-breeding/eel" element={<AiBreedingEelEn />} />
+        <Route path="/en/ai-breeding/pomfret" element={<AiBreedingPomfretEn />} />
         <Route path="/en/hailing" element={<HailingEn />} />
         <Route path="/en/hailing/pingang" element={<HailingPingangEn />} />
         <Route path="/en/hailing/island" element={<HailingIslandEn />} />
@@ -103,6 +122,7 @@ export default function App() {
         <Route path="/en/hailing/maritime" element={<HailingMaritimeEn />} />
         <Route path="/en/company/nongmai-ai" element={<CompanyNongmaiEn />} />
         <Route path="/en/company/yongxing" element={<CompanyYongxingEn />} />
+        <Route path="/en/company/zhiqian" element={<CompanyZhiqianEn />} />
         <Route path="/en/company/partners" element={<CompanyPartnersEn />} />
         <Route path="/en/news" element={<NewsEn />} />
         <Route path="/en/contact" element={<ContactEn />} />

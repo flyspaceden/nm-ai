@@ -90,13 +90,21 @@
     @apply rounded-2xl border border-line bg-surface bg-opacity-90 p-6 shadow-deep backdrop-blur;
   }
 
-  .card strong {
-    @apply text-on-surface;
-  }
+.card strong {
+  @apply text-on-surface;
+}
 
-  .card p {
-    @apply text-on-muted;
-  }
+.card p {
+  @apply text-on-muted;
+}
+
+.card-stack {
+  @apply flex flex-col;
+}
+
+.card-stack > * + * {
+  @apply mt-2;
+}
 
   .tag {
     @apply inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs;
@@ -401,13 +409,170 @@
     @apply px-4 pb-4 pt-3 text-sm text-on-muted;
   }
 
-  .gallery-caption strong {
-    @apply block text-base text-on-surface;
-  }
+.gallery-caption strong {
+  @apply block text-base text-on-surface;
+}
 
-  .zone-split {
-    @apply grid gap-8 lg:grid-cols-[1.05fr_0.95fr];
-  }
+.media-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.media-frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000; /* 提供留白底色，避免裁剪 */
+  border-radius: 12px;
+}
+
+.hero-grid {
+  @apply grid items-center gap-8;
+  grid-template-columns: minmax(280px, 1.2fr) minmax(260px, 0.9fr);
+}
+
+.hero-media {
+  @apply flex flex-col items-start;
+}
+
+.kpi-row {
+  @apply mt-4 flex flex-wrap gap-2;
+}
+
+.kpi-pill {
+  @apply flex items-center gap-2 rounded-full border border-line bg-white/75 px-4 py-2 text-xs text-on-surface shadow-sm backdrop-blur;
+}
+
+.flow-grid {
+  @apply grid gap-4;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.flow-card {
+  @apply relative overflow-hidden rounded-2xl border border-line bg-surface p-6 shadow-deep;
+}
+
+.flow-badge {
+  @apply absolute right-4 top-4 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary;
+}
+
+.flow-card strong {
+  @apply block text-on-surface;
+}
+
+.flow-card p {
+  @apply mt-2;
+}
+
+.value-strip {
+  @apply mt-4 grid gap-3 md:grid-cols-3;
+}
+
+.value-chip {
+  @apply flex items-center justify-between rounded-2xl border border-line bg-surface p-4 shadow-sm;
+}
+
+.ai-panel {
+  @apply grid gap-6 lg:grid-cols-[1.05fr_0.95fr];
+}
+
+.ai-console {
+  @apply grid gap-3;
+}
+
+.ai-widget {
+  @apply rounded-2xl border border-line bg-gradient-to-br from-slate-50 via-surface to-white p-4 shadow-deep;
+}
+
+.chip-row {
+  @apply mt-3 flex flex-wrap gap-2;
+}
+
+.stepper {
+  @apply grid gap-3;
+}
+
+.stepper-item {
+  @apply flex items-center gap-3 text-sm text-on-soft;
+}
+
+.step-dot {
+  @apply h-3 w-3 rounded-full bg-primary;
+  box-shadow: 0 0 0 6px rgba(14, 165, 165, 0.12);
+}
+
+.oyster-hero .hero-splash-bg {
+  background-position: center;
+  background-size: cover;
+}
+
+.oyster-overlay {
+  background: linear-gradient(90deg, rgba(248, 250, 252, 0.94) 20%, rgba(248, 250, 252, 0.7) 55%, rgba(248, 250, 252, 0.2) 85%);
+}
+
+.hero-panel {
+  @apply max-w-2xl rounded-3xl border border-white/60 bg-white/80 p-8 shadow-deep backdrop-blur;
+}
+
+.video-only .video-center {
+  @apply flex justify-center;
+}
+
+.video-only .media-frame {
+  width: min(960px, 100%);
+}
+
+.value-strip {
+  @apply mt-4 grid gap-3 md:grid-cols-3;
+}
+
+.value-chip {
+  @apply flex items-center justify-between rounded-2xl border border-line bg-surface p-4 shadow-sm;
+}
+
+.ai-panel {
+  @apply grid gap-6 lg:grid-cols-[1.05fr_0.95fr];
+}
+
+.ai-console {
+  @apply grid gap-3;
+}
+
+.ai-widget {
+  @apply rounded-2xl border border-line bg-gradient-to-br from-slate-50 via-surface to-white p-4 shadow-deep;
+}
+
+.chip-row {
+  @apply flex flex-wrap gap-2 mt-3;
+}
+
+.stepper {
+  @apply grid gap-3;
+}
+
+.stepper-item {
+  @apply flex items-center gap-3 text-sm text-on-soft;
+}
+
+.step-dot {
+  @apply h-3 w-3 rounded-full bg-primary;
+  box-shadow: 0 0 0 6px rgba(14, 165, 165, 0.12);
+}
+
+.oyster-hero .hero-splash-bg {
+  background-position: center;
+  background-size: cover;
+}
+
+
+.zone-split {
+  @apply grid gap-8 lg:grid-cols-[1.05fr_0.95fr];
+}
 
   .zone-list {
     @apply grid gap-3;
@@ -552,9 +717,17 @@
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
 
-  .matrix-card {
-    @apply rounded-2xl border border-line bg-surface p-4 text-sm text-on-muted shadow-sm;
-  }
+.matrix-card {
+  @apply rounded-2xl border border-line bg-surface p-4 text-sm text-on-muted shadow-sm;
+}
+
+.matrix-card strong {
+  @apply block text-on-surface;
+}
+
+.matrix-card p {
+  @apply mt-2;
+}
 
   .age-grid {
     @apply grid gap-4;

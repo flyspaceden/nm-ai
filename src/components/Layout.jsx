@@ -51,6 +51,25 @@ const navConfig = {
         ]
       },
       {
+        label: "AI育种/养殖",
+        to: "/ai-breeding",
+        children: [
+          { label: "牡蛎苗", to: "/ai-breeding/oyster" },
+          { label: "黄鳝苗", to: "/ai-breeding/eel" },
+          { label: "黄特鲳苗", to: "/ai-breeding/pomfret" }
+        ]
+      },
+      {
+        label: "公司与合作",
+        to: "/company/nongmai-ai",
+        children: [
+          { label: "农脉人工智能", to: "/company/nongmai-ai" },
+          { label: "永兴水产养殖", to: "/company/yongxing" },
+          { label: "智倩达农业技术开发", to: "/company/zhiqian" },
+          { label: "合作与招商", to: "/company/partners" }
+        ]
+      },
+      {
         label: "海陵岛联动",
         to: "/hailing",
         children: [
@@ -62,15 +81,6 @@ const navConfig = {
           { label: "国际海上经济论坛", to: "/hailing/forum" },
           { label: "AI心理疗愈中心", to: "/hailing/wellbeing" },
           { label: "航海博物馆", to: "/hailing/maritime" }
-        ]
-      },
-          {
-        label: "公司与合作",
-        to: "/company/nongmai-ai",
-        children: [
-          { label: "农脉人工智能", to: "/company/nongmai-ai" },
-          { label: "永兴水产养殖", to: "/company/yongxing" },
-          { label: "合作与招商", to: "/company/partners" }
         ]
       },
       { label: "资讯", to: "/news" },
@@ -87,8 +97,9 @@ const navConfig = {
       quickLinks: [
         { label: "首页", to: "/" },
         { label: "园区规划", to: "/masterplan" },
-        { label: "海陵岛联动", to: "/hailing" },
+        { label: "AI育种/养殖", to: "/ai-breeding" },
         { label: "公司与合作", to: "/company/nongmai-ai" },
+        { label: "海陵岛联动", to: "/hailing" },
         { label: "资讯", to: "/news" },
         { label: "联系/预约", to: "/contact" }
       ],
@@ -131,6 +142,25 @@ const navConfig = {
         ]
       },
       {
+        label: "AI Breeding",
+        to: "/en/ai-breeding",
+        children: [
+          { label: "Oyster Seed", to: "/en/ai-breeding/oyster" },
+          { label: "Eel Seed", to: "/en/ai-breeding/eel" },
+          { label: "Pomfret Seed", to: "/en/ai-breeding/pomfret" }
+        ]
+      },
+      {
+        label: "Company",
+        to: "/en/company/nongmai-ai",
+        children: [
+          { label: "Nongmai AI", to: "/en/company/nongmai-ai" },
+          { label: "Yongxing Aquaculture", to: "/en/company/yongxing" },
+          { label: "Zhiqian Agriculture", to: "/en/company/zhiqian" },
+          { label: "Partnerships", to: "/en/company/partners" }
+        ]
+      },
+      {
         label: "Hailing Gateway",
         to: "/en/hailing",
         children: [
@@ -142,15 +172,6 @@ const navConfig = {
           { label: "Maritime Economy Forum", to: "/en/hailing/forum" },
           { label: "AI Wellbeing Center", to: "/en/hailing/wellbeing" },
           { label: "Maritime Museum", to: "/en/hailing/maritime" }
-        ]
-      },
-      {
-        label: "Company",
-        to: "/en/company/nongmai-ai",
-        children: [
-          { label: "Nongmai AI", to: "/en/company/nongmai-ai" },
-          { label: "Yongxing Aquaculture", to: "/en/company/yongxing" },
-          { label: "Partnerships", to: "/en/company/partners" }
         ]
       },
       { label: "News", to: "/en/news" },
@@ -167,8 +188,9 @@ const navConfig = {
       quickLinks: [
         { label: "Home", to: "/en" },
         { label: "Master Plan", to: "/en/masterplan" },
-        { label: "Hailing Gateway", to: "/en/hailing" },
+        { label: "AI Breeding", to: "/en/ai-breeding" },
         { label: "Company", to: "/en/company/nongmai-ai" },
+        { label: "Hailing Gateway", to: "/en/hailing" },
         { label: "News", to: "/en/news" },
         { label: "Contact", to: "/en/contact" }
       ],

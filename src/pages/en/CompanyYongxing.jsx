@@ -3,8 +3,15 @@ import { Link } from "react-router-dom";
 import Layout from "../../components/Layout.jsx";
 
 export default function CompanyYongxing() {
-  const basePath = `${import.meta.env.BASE_URL}asset/images/公司/阳江市永兴水产养殖/资质`;
-  const heroBg = `${import.meta.env.BASE_URL}asset/images/公司/阳江市永兴水产养殖/背景1.png`;
+  const imageBase = `${import.meta.env.BASE_URL}asset/images/公司/阳江市永兴水产养殖`;
+  const basePath = `${imageBase}/资质`;
+  const heroBg = `${imageBase}/图片1.jpg`;
+  const pondImages = [
+    `${imageBase}/图片2.jpg`,
+    `${imageBase}/图片3.jpg`,
+    `${imageBase}/图片4.jpg`,
+    `${imageBase}/图片5.png`
+  ];
   const zhenpinCerts = Array.from({ length: 14 }, (_, index) =>
     `${basePath}/10.14个圳品证书合集_${String(index).padStart(2, "0")}.png`
   );
@@ -63,6 +70,23 @@ export default function CompanyYongxing() {
                 <span>Annual output</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-tight">
+        <div className="container reveal">
+          <span className="eyebrow">On-site Ponds</span>
+          <h2 className="section-title">Farm Ponds & Facilities</h2>
+          <p className="section-subtitle">Current views of the Pingang farm ponds and infrastructure.</p>
+          <div className="cert-grid" style={{ marginTop: "18px" }}>
+            {pondImages.map((src, index) => (
+              <div className="cert-card" key={src}>
+                <button type="button" onClick={() => openLightbox(src, `Farm pond ${index + 1}`)}>
+                  <img src={src} alt={`Farm pond ${index + 1}`} />
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       </section>
