@@ -34,15 +34,14 @@ const navConfig = {
     brand: { name: "农脉AI", sub: "Nongmai AI", to: "/" },
     langSwitch: { label: "EN", to: "/en" },
     cta: { label: "预约参观", to: "/contact" },
-    items: [
-      { label: "首页", to: "/" },
-      {
-        label: "园区规划",
-        to: "/masterplan",
-        children: [
-          { label: "总览", to: "/masterplan" },
-          { label: "生态农业体验", to: "/masterplan/ecofarming" },
-          { label: "科技研学", to: "/masterplan/ai-study" },
+      items: [
+        { label: "首页", to: "/" },
+        {
+          label: "园区规划",
+          to: "/masterplan",
+          children: [
+            { label: "生态农业体验", to: "/masterplan/ecofarming" },
+            { label: "科技研学", to: "/masterplan/ai-study" },
           { label: "亲子互动", to: "/masterplan/family-fun" },
           { label: "休闲度假", to: "/masterplan/stay-dine" },
           { label: "节庆活动", to: "/masterplan/events" },
@@ -73,7 +72,6 @@ const navConfig = {
         label: "海陵岛联动",
         to: "/hailing",
         children: [
-          { label: "总览（300km城市群）", to: "/hailing" },
           { label: "平岗农场综合体", to: "/hailing/pingang" },
           { label: "海陵岛目的地", to: "/hailing/island" },
           { label: "国际交流总览", to: "/hailing/exchange" },
